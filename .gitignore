@@ -1,24 +1,34 @@
+# dependencies (bun install)
 node_modules
-package-lock.json
-yarn.lock
 
-.DS_Store
-.cache
+# output
+out
+dist
+*.tgz
+
+# code coverage
+coverage
+*.lcov
+
+# logs
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+# dotenv environment variable files
 .env
-.vercel
-.output
-.vinxi
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 
-/build/
-/api/
-/server/build
-/public/build
-.vinxi
-# Sentry Config File
-.env.sentry-build-plugin
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
 
-count.txt
+# IntelliJ based IDEs
+.idea
+
+# Finder (MacOS) folder config
+.DS_Store

@@ -1,40 +1,39 @@
-import * as React from 'react'
+// app/routes/__root.tsx
+import type { ReactNode } from "react";
 import {
-  HeadContent,
   Outlet,
-  Scripts,
   createRootRoute,
-} from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+  HeadContent,
+  Scripts,
+} from "@tanstack/react-router";
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       {
-        charSet: 'utf-8',
+        charSet: "utf-8",
       },
       {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
       },
       {
-        title: 'TanStack Start Starter',
+        title: "TanStack Start Starter",
       },
     ],
   }),
   component: RootComponent,
-})
+});
 
 function RootComponent() {
   return (
     <RootDocument>
       <Outlet />
-      <TanStackRouterDevtools />
     </RootDocument>
-  )
+  );
 }
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html>
       <head>
@@ -45,5 +44,5 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }
